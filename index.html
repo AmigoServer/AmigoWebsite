@@ -10,8 +10,8 @@
     <header class="site-header">
         <div class="container">
             <div class="brand">
-            <img src="assets/Logo.png" alt="Logo" class="brand-logo" />
-            <div class="brand-text">| AmigoServer</div>
+                <img src="assets/Logo.png" alt="Logo" class="brand-logo" />
+                <div class="brand-text">| AmigoServer</div>
             </div>
 
             <nav class="nav">
@@ -23,47 +23,136 @@
         </div>
     </header>
 
+    <div class="top-scrollbar">
+        <div class="top-scrollbar-thumb"></div>
+    </div>
+
+
     <main>
-        <section class="first_block">
-            <div class="image_wrap">
+        <section id="home" class="first_block">
+            <div class="image_wrap bg_hero">
                 <div class="header_overlay"></div>
                 <img class="side_image" src="assets/hero_header.png" alt="">
                 <div class="particles"></div>
 
-                <div class="text-wrap">
+                <div class="text-wrap text-hero">
                     <h1>AmigoServer</h1>
-                    <h4>Демо версія сайту | v0.0.1</h4>
+                    <h4>Демо версія сайту | v0.0.5</h4>
 
                     <h2>Приєднуйся до всесвіту пригод.</h2>
                     <h2>Величезні локації, квести та сотні ідей тебе вже чекають</h2>
                 </div>
+                
+            </div>
+        </section>
+
+
+        <section id="about" class="second_block">
+            <h2>Про наш сервер:</h2>
+
+            <div class="bg_about">
+                <div class="image_wraper grass_blocks">
+                
+                    <img src="assets/grass1.png" alt="" width="150px">
+                    <img src="assets/grass2.png" alt="" width="150px">
+
+                </div>
+
+                <div class="text-wrap text-about">
+                    <h3>AmigoServer — це простір для гравців, які хочуть грати в Minecraft у теплій, дружній та відкритій атмосфері. Ми все ще формуємо особливості геймплею, але головна ціль незмінна: створити активну та приємну спільноту, де кожен почуватиметься «своїм». На нашому сервері ви зможете будувати, досліджувати світ і спілкуватися з іншими гравцями без зайвого стресу.</h3>
+
+                    <h3>Ми плануємо додавати нові можливості, події та унікальні функції, щоб зробити гру ще цікавішою. Команда AmigoServer уважно прислухається до пропозицій гравців, тому саме ваша думка може вплинути на розвиток проєкту. Приєднуйтесь, грайте та допоможіть нам разом створити спільноту, у якій кожен знайде собі друзів і місце для творчості!</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="third_section">
+            <h2>Магазин:</h2>
+
+            <div class="shop-grid">
+                <div class="shop-card">
+                    <div class="card-image">
+                        <img src="assets/characters/God.png" alt="Item">
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-info">
+                            <p class="card-name">Premium Pack</p>
+                            <p class="card-price">100₴</p>
+                        </div>
+                        <div class="card-buy">
+                            <img src="assets/shop-card.svg" alt="buy" width="30px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card">
+                    <div class="card-image">
+                        <img src="assets/characters/Elite1.png" alt="Item">
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-info">
+                            <p class="card-name">Premium Pack</p>
+                            <p class="card-price">100₴</p>
+                        </div>
+                        <div class="card-buy">
+                            <img src="assets/shop-card.svg" alt="buy" width="30px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card">
+                    <div class="card-image">
+                        <img src="assets/characters/Warrior.png" alt="Item">
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-info">
+                            <p class="card-name">Premium Pack</p>
+                            <p class="card-price">100₴</p>
+                        </div>
+                        <div class="card-buy">
+                            <img src="assets/shop-card.svg" alt="buy" width="30px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="join" class="fourth_section">
+            <h2>Тому не втрачайте шанс, приєднуйтесь</h2>
+
+            <div class="server-card">
+                <p id="server-address">mc.example.com</p>
+                <button onclick="copyAddress()">Скопіювати</button>
             </div>
         </section>
     </main>
 
 
-    <script>
-        const imageWrap = document.querySelector('.image_wrap');
+    <footer>
+        <div class="brand">
+            <img src="assets/Logo.png" alt="Logo" class="brand-logo" />
+            <div class="brand-text">| AmigoServer</div>
+        </div>
 
-        document.addEventListener('mousemove', (e) => {
-        const rect = imageWrap.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+        <div class="link">
+            <a href="" class="footer-link"><img src="assets/logos/discord.png" alt="discord" width="50px"></a>
+            <a href="" class="footer-link"><img src="assets/logos/tiktok.png" alt="tiktok" width="50px"></a>
+        </div>
 
-        const deltaX = e.clientX - centerX;
-        const deltaY = e.clientY - centerY;
+        <h3>©2025 | Всі права захищено</h3>
+    </footer>
 
-        const maxRotate = 7; // зменшили максимальний кут повороту
-        const rotateX = (-deltaY / rect.height) * maxRotate;
-        const rotateY = (deltaX / rect.width) * maxRotate;
 
-        imageWrap.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
+    <script src="main_nav.js"></script>
+    <script src="header_scroll.js"></script>
+    <script src="scroll_bar.js"></script>
+    <script src="rotate_card.js"></script>
 
-        // Повернення до центру при виході курсора
-        imageWrap.addEventListener('mouseleave', () => {
-        imageWrap.style.transform = `rotateX(0deg) rotateY(0deg)`;
-        });
-    </script>
+    <script src="copy_adress.js"></script>
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="scroll_animations.js"></script>
 </body>
 </html>
